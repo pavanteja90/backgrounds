@@ -1,0 +1,9 @@
+.user-table {
+	width: 100%;
+	.mat-header-row {
+		background-color: beige;
+	}
+	tr:nth-child(even) {
+		background-color: #f2f2f2;
+	}
+}

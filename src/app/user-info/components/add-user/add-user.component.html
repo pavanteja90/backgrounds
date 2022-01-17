@@ -1,0 +1,45 @@
+<section>
+	<h2>Add/Update User</h2>
+	<form [formGroup]="data.form">
+		<div class="row">
+			<mat-form-field>
+				<mat-label>User Name</mat-label>
+				<input matInput placeholder="Enter user name" formControlName="name" required="true">
+				<!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+			</mat-form-field>
+
+			<mat-form-field>
+				<mat-label>Designation</mat-label>
+				<input matInput placeholder="Enter designation" formControlName="designation" required="true">
+				<!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+				<mat-hint>Web Developer, Tester</mat-hint>
+			</mat-form-field>
+		</div>
+
+		<div class="row">
+			<mat-form-field>
+				<mat-label>Location</mat-label>
+				<input matInput placeholder="Enter location" formControlName="location" required="true">
+				<!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+				<mat-hint>Brisbane, Sydney</mat-hint>
+			</mat-form-field>
+
+			<mat-form-field>
+				<mat-label>Joined Date</mat-label>
+				<input matInput [matDatepicker]="picker" [matDatepickerFilter]="businessDays" formControlName="joinedOn" [max]="maxDate">
+				<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+				<mat-datepicker #picker></mat-datepicker>
+			</mat-form-field>
+		</div>
+
+		<div class="row">
+			<mat-checkbox formControlName="isWFH">Is working from home?</mat-checkbox>
+		</div>
+
+		<div class="row">
+			<button mat-button color="primary" [mat-dialog-close]="true">Save</button>
+			<button mat-button color="accent" [mat-dialog-close]="false">Cancel</button>
+		</div>
+	</form>
+	<button mat-button (click)="log()">Log</button>
+</section>

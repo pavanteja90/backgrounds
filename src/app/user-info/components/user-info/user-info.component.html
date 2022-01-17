@@ -1,0 +1,11 @@
+<section class="container">
+	<h1>User Infomation</h1>
+	<ng-container *ngIf="(data$ | async) as data">
+		<user-table [data]="data" (action)="captureAction($event)"></user-table>
+		<section class="add-user-container">
+			<button mat-flat-button color="primary" (click)="addUser()">
+				<mat-icon>add</mat-icon>Add New User
+			</button>
+		</section>
+	</ng-container>
+</section>

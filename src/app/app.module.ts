@@ -1,18 +1,49 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { MatButtonModule } from '@angular/material/button';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { MatIconModule } from '@angular/material/icon';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TwinklingStarsComponent } from './twinkling-stars/twinkling-stars.component';
+import { ParticlesBackgroundComponent } from './particles-background/particles-background.component';
+import { environment } from 'src/environments/environment';
+import { UserInfoModule } from './user-info/user-info.module';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		TwinklingStarsComponent,
+		ParticlesBackgroundComponent
+	],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		BrowserAnimationsModule,
+		MatButtonModule,
+		MatButtonToggleModule,
+		MatIconModule,
+		AngularFireModule.initializeApp({
+			apiKey: environment.firebaseConfig.apiKey,
+			authDomain: environment.firebaseConfig.authDomain,
+			projectId: environment.firebaseConfig.projectId,
+			storageBucket: environment.firebaseConfig.storageBucket,
+			messagingSenderId: environment.firebaseConfig.messagingSenderId,
+			appId: environment.firebaseConfig.appId,
+			measurementId: environment.firebaseConfig.measurementId
+		}),
+		AngularFirestoreModule,
+		UserInfoModule
+	],
+	providers: [
+		{ provide: LOCALE_ID, useValue: "en-AU" },
+		{ provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline' } }
+	],
+	bootstrap: [AppComponent]
 })
 export class AppModule { }
