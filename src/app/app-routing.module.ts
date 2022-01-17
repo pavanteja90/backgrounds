@@ -19,7 +19,7 @@ const routes: Routes = [{
 	component: UserInfoComponent
 }, {
 	path: '**',
-	redirectTo: 'particles'
+	redirectTo: 'user-info'
 }];
 
 @NgModule({
