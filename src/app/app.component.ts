@@ -3,13 +3,15 @@ import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
+/**
+ * @description Root application component that gets bootstrapped
+ */
 @Component({
 	selector: 'app-root',
 	templateUrl: './app.component.html',
 	styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, OnDestroy{
-	title = 'backgrounds';
 	editObj: any;
 	selectedTab: FormControl = new FormControl("user-info");
 	sub: Subscription;

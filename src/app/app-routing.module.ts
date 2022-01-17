@@ -22,6 +22,9 @@ const routes: Routes = [{
 	redirectTo: 'user-info'
 }];
 
+/**
+ * @description Defines the routes available for the application and the components that are instantiated for different paths
+ */
 @NgModule({
 	imports: [RouterModule.forRoot(routes)],
 	exports: [RouterModule]

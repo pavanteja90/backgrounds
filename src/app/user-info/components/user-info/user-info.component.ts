@@ -8,6 +8,9 @@ import { UserAction } from '../../models/user-action.model';
 import { FirebaseService } from '../../services';
 import { UserFormService } from '../../services/user-form.service';
 
+/**
+ * @description Container component (Smart) which will interact with services to perform various actions depending on user interaction
+ */
 @Component({
 	selector: 'app-user-info',
 	templateUrl: './user-info.component.html',
@@ -15,10 +18,11 @@ import { UserFormService } from '../../services/user-form.service';
 })
 export class UserInfoComponent implements OnDestroy {
 	data$: Observable<User[]>;
-	userForm: FormGroup;
-	dialogRef: MatDialogRef<AddUserComponent>;
-	confirmationRef: MatDialogRef<ConfirmationComponent>;
-	subs: Subscription[] = []
+	displayedColumns: string[] = ['index', 'name', 'designation', 'location', 'isWFH', 'joinedOn', 'edit', 'delete'];
+	private userForm: FormGroup;
+	private dialogRef: MatDialogRef<AddUserComponent>;
+	private confirmationRef: MatDialogRef<ConfirmationComponent>;
+	private subs: Subscription[] = [];
 
 	constructor(private firebaseService: FirebaseService, formService: UserFormService, private dialog: MatDialog) {
 		this.data$ = firebaseService.getAll();

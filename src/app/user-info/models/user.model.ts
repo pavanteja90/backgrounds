@@ -1,15 +1,29 @@
+/**
+ * @description Class defining a User record data structure
+ */
 export class User {
+	/**
+	 * @description Unique ID used to identify a record in Firebase collection
+	 */
 	id?: string;
+	/**
+	 * @description Designation of the user - Web Developer/Tester/Web Designer
+	 */
 	designation: string;
+	/**
+	 * @description Identifies whether the user is working from home
+	 */
 	isWFH: boolean;
+	/**
+	 * @description Joining Date of the user
+	 */
 	joinedOn: string;
-	// _joinedOn: Date;
-	// get joinedOn() {
-	// 	return this._joinedOn.getDate() + "/" + (this._joinedOn.getMonth() + 1) + "/" + this._joinedOn.getFullYear();
-	// }
-	// set joinedOn(value: string) {
-	// 	this._joinedOn = new Date(value);
-	// }
+	/**
+	 * @description Location of the user
+	 */
 	location: string;
+	/**
+	 * @description Name of the user
+	 */
 	name: string;
 }
