@@ -1,9 +1,12 @@
 <section>
-	<mat-button-toggle-group name="background" aria-label="Background Selector" [value]="selectedTab.value" (change)="selectedTab.patchValue($event.value)">
-		<mat-button-toggle value="particles">Particles Background</mat-button-toggle>
-		<mat-button-toggle value="twinkling">Twinkling Stars</mat-button-toggle>
-		<mat-button-toggle value="user-info">User Info Module</mat-button-toggle>
-	</mat-button-toggle-group>
+	<div class="nav">
+		<mat-button-toggle-group name="background" aria-label="Background Selector" [value]="selectedTab.value" (change)="selectedTab.patchValue($event.value)">
+			<mat-button-toggle value="user-info">User Info Module</mat-button-toggle>
+			<mat-button-toggle value="animations">Subtle Animations</mat-button-toggle>
+			<mat-button-toggle value="particles">Particles Background</mat-button-toggle>
+			<mat-button-toggle value="twinkling">Twinkling Stars</mat-button-toggle>
+		</mat-button-toggle-group>
+	</div>
 	<router-outlet></router-outlet>
 	<footer>
 		<div style="background-color: whitesmoke; height: 50px; display: flex;	align-items: center; justify-content: space-around;">

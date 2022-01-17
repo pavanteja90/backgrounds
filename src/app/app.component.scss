@@ -1,3 +1,15 @@
-.mat-button-toggle-checked {
-	background-color: red;
+div.nav {
+	text-align: right;
+	background-color: antiquewhite;
+
+	mat-button-toggle-group {
+		border-radius: 0px;
+		border: none;
+		.mat-button-toggle-appearance-standard {
+			background: transparent !important;
+			&.mat-button-toggle-checked {
+				background: brown !important;
+			}
+		}
+	}
 }

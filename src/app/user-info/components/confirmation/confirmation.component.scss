@@ -1,5 +1,8 @@
 .row {
 	display: flex;
+	&.left {
+		justify-content: left !important;
+	}
 	justify-content: center;
 	>* {
 		margin: 20px;
